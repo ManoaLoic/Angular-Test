@@ -1,0 +1,32 @@
+<div class="login-box">
+    <form
+        ngForm
+        #login
+        class="form"
+        (submit)="doLogin($event)"
+        >
+
+        <mat-form-field class="full-width">
+          <mat-label>Email</mat-label>
+          <input [(ngModel)]="email" name="email" matInput type="email" placeholder="Email">
+        </mat-form-field>  
+    
+        <mat-form-field class="full-width">
+          <mat-label>Password</mat-label>
+          <input [(ngModel)]="password" name="password" matInput type="password" placeholder="Email">
+        </mat-form-field>
+    
+        @if (error) {
+            <p style="color:red;">{{error}}</p>
+        }
+        
+        <button
+            mat-stroked-button
+            color="primary"
+            [disabled]="email == '' || password == ''"
+        >
+            Log In
+        </button>
+
+    </form>
+</div>

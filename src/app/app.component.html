@@ -1,4 +1,16 @@
-<h1>Hello le MBDS Madagascar</h1>
-<app-assignments></app-assignments>
+<h1>
+  <nav>
+    <a routerLink="/home">{{title}}</a>
+  </nav>
+</h1>
+@if (isConnected()) {
+  <button (click)="logout()" mat-button color="primary">Se déconnecter</button>
+}@else{
+  <button (click)="login()" mat-raised-button color="primary">Se connecter</button>
+}
 
+<router-outlet></router-outlet>
+<!--
+<app-assignments></app-assignments>
+-->
 
